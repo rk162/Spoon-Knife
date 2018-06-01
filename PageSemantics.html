@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Using HTML5 Semantic Tags</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="images/favicon.png" type="image/png">
+	<style>
+
+    *{
+
+    	border:  1px solid red;
+    }
+	.mediumWidth{
+
+		width: 120px;
+	}
+</style>
+</head>
+<body>
+	<header style="height: 150px; background-color: grey;">
+	<div style="float: left;">
+		<img src="images/logo.png" alt="company Logo" class="logoImage">
+	</div>
+
+		<div style="float:right;">
+		<h1 class="centerText redColor">Shoppers Stop</h1>
+	</div>
+
+
+	<nav style="padding-top: 100px"> 
+		
+	<ul>
+			<li class="inlineElement"><a href="" class="links">Home</a></li>
+			<li class="inlineElement"><a href="" class="links">View Orders</a></li>
+			<li class="inlineElement"><a href="" class="links">Cancel Order</a></li>
+			<li class="inlineElement"><a href="" class="links">Contact</a></li>
+		</ul>
+	</nav>
+		</header>
+	<section>
+		<h2 class="centerText">Catalog</h2>
+		<table class="table">
+			<caption>Item List</caption>
+			<tr>
+				<th>Sl.No</th>
+				<th class="mediumWidth">Item Name</th>
+				<th>Rate Per Unit</th>
+			</tr>
+
+			<tr>
+				<td>1</td>
+				<td> T.Shirt</td>
+				<td>1200.00</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>Jeans</td>
+				<td>2400.00</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>Banarasi</td>
+				<td>4500.00</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>Shoes</td>
+				<td>3200.00</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="centerText">Total</td>
+				<td>11,500.00</td>
+			</tr>
+		</table>
+	</section>
+	<footer>
+		<p class="centerText">Designed by Chaudha Experts Private 
+		Limited</p>
+	</footer>
+</body>
+</html>

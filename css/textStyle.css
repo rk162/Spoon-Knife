@@ -1,0 +1,58 @@
+/* Using Web Fonts */
+
+	@font-face {
+	font-family: 'Oswald';
+	src: url('../types/Oswald-Bold.ttf'); 
+}
+.webFont{
+
+   font-family: 'Oswald';
+
+
+}
+
+.textStyle{
+
+	font-family: 'Arial';
+	font-weight: bold;
+	font-style: 'italic';
+	font-size: 1.2em;
+	line-height: 40px;
+}
+
+.textStyle::first-letter{
+
+	font-size: 1.8em;
+	font-family: 'courier';
+}
+
+.formatText{
+
+    text-indent: 100px;
+	text-align: center;
+    text-decoration: underline;
+
+}
+
+.formatText::first-line{
+
+
+	text-transform: uppercase;
+}
+
+.textShadow{
+
+	text-shadow: 2px 5px 10px  #032149;
+}
+
+.textWithBackGround{
+
+	/* background: linear-gradient(red,yellow,pink,blue);
+	 */
+	/*  background: linear-gradient(120deg,red,yellow,pink,blue);
+	 */ 
+	
+	 background: radial-gradient(red,yellow,pink,blue);
+	
+	height: 60px;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>New HTML 5 Attributes</title>
+	<style type="text/css">
+		
+		.mystyle{
+			color :  #9fd6c2;
+		}
+
+		
+
+		
+	</style>
+
+
+
+  
+
+</head>
+<body>
+	<datalist id="cakeList">
+		<option>Chocolate Brownie</option>
+		<option>Black Currant</option>
+		<option>White Currant</option>
+		<option>Death by Choclate</option>
+		<option>Plum Cake</option>
+	</datalist>
+	<dataList id="cakeMeasure">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		
+	</dataList>
+
+	<datalist id="days">
+  <select>
+    <option label="Independence Day">2018-08-15</option>
+    <option label="Diwali">2018-10-29</option>
+    <option label="Holi">2018-03-14</option>
+  </select>
+</datalist>
+	<form onsubmit="return true" oninput="amount.value=
+	 weight.valueAsNumber * 100">
+		
+		<fieldset>
+			
+			<div>
+				<label for="">CustomerName</label>
+				<input type= "text" name="customerName" required="required" placeholder="Should not be blank">
+			</div>
+			<div>
+				<label for="">PhoneNumber</label>
+				<input type="tel" placeholder="9999-99999999" pattern="[0-9]{4}-[0-9]{8}">
+			</div>
+			<div>
+				<label for="">Email</label>
+				<input type="email" multiple="multiple" placeholder="One or more delim with comma">
+			</div>
+			<div>
+				<label for="">Cake</label>
+				<input type="text" name="cake" list="cakeList">
+			</div>
+			<div>
+				<label for="weight">Weight</label>
+				<input type="range" max="10" min="0.5" step="0.5" name="weight" id="weight" value="0.5" oninput="selectedWeight.value=weight.value" list="cakeMeasure">
+				<output name="selectedWeight"></output>
+			</div>
+			<div>
+				<label for="">Delivery Date</label>
+				<input type="date" id="days" name="delvDate" id="delvDate" list="days">
+			</div>
+			
+			<div>
+				<label for="">Delivery Time</label>
+				<input type="time" name="delvTime" 
+				       required="required">
+			</div>
+			<div>
+				<label for="">Delivery Mode</label>
+				<select name="delvMode">
+					<option>Swiggy</option>
+					<option>Food Panda</option>
+					<option>Box8</option>
+					<option>Pickup</option>
+				</select>
+			</div>
+			
+			<div>
+				<label for="">Amount</label>
+				<output name="amount">0</output>
+			</div>
+			
+			<div>
+				<label for="">Message</label>
+				<textarea name="message" cols="30" rows="3"></textarea></div>
+			<div>
+				<input type="image" src="images/clear.jpg" width="40px" height="70px">
+				<input type="image" src="images/submit2.jpg" width="60px" height="170px">
+
+				<input type="submit" formaction="Login.html"
+				  formmethod="get" value="Login" formnovalidate>
+
+				<input type="submit" formaction="Register.html"
+				  formmethod="get" value="Register" formnovalidate>
+				  
+			</div>
+		</fieldset>
+	</form>
+</body>
+</html>

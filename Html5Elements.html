@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>HTML 5 New Elements</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<datalist id="city">
+		<option>Chennai</option>
+		<option>Chandigarh</option>
+		<option>Greater Noida</option>
+		<option>Gurugram</option>
+		<option>Hyderabad</option>
+		<option>Bengaluru</option>
+			
+	</datalist>
+	<form>
+		
+		<div>
+			<label for="">Customer Name</label>
+			<input type="text">
+			
+			<label for="">Location</label>
+			<input type="text" list="city">
+			
+			<label for="">Email</label>
+			<input type="email" multiple="multiple">
+			
+			<label for="">Telephone Number</label>
+			<input type="tel" pattern="[0-9]{4}">
+              
+			<label for="prefColor">Prefered Color</label>
+			<input type="color" name="prefColor" id="prefColor">
+			
+			<label for="colarSize">Collar Size</label>
+			<input type="number" max="46" min="24" step="2" name="colarSize" id="colarSize">
+			<input type="image" src="images/submit.png" height="20px" width="20px">
+		</div>
+	</form>
+</body>
+</html>

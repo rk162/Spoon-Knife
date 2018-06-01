@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Understanding Selectors</title>
+	<link rel="stylesheet" href="css/selectors.css">
+	<base href="images/">
+
+<style type="text/css">
+	
+	@font-face {
+  font-family: 'Aclonica';
+  font-weight: 400;
+  font-style: normal;
+ src: url('types/Aclonica-regular.woff') format('woff'),
+       url('types/Aclonica-regular.ttf') format('truetype'); 
+      }
+
+</style>
+</head>
+<body>
+
+	<head>
+		 <img src="cake.jpg" alt="" class="thumbNail leftLogo">
+       <img src="cake02.jpg" alt="" class="thumbNail rightLogo">
+       <h1 id="heading">CSS Selectors</h1>
+	</head>	
+		<nav>
+			<ul>
+				<li><a href="home.html">Home</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="order.jsp">Order</a></li>
+				<li><a href="gallery.html">Gallery</a></li>
+			</ul>
+		</nav>
+		<section>
+			
+			<div style="text-align: center;">
+				<input type="search" placeholder="search" name='srchString'>
+			</div>
+			<table>
+				<tr>
+					<td>Sl.No</td>
+					<td>Name</td>
+					<td>Rate Per Unit</td>
+					<td>Quantity</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Plum Cake</td>
+					<td>450</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Choco Brownie</td>
+					<td>350</td>
+					<td>4</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Dark Currant</td>
+					<td>789</td>
+					<td>5</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Icecream Cake</td>
+					<td>800</td>
+					<td>6</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Wedding Cake</td>
+					<td>1500</td>
+					<td>6</td>
+				</tr>
+			</table>
+		</section>
+	
+
+	<div id="sibling">
+
+		<p id="arj">Dharm</p>
+		<p>Arjun</p>
+        <p>Bhim</p>
+
+	</div>
+
+	<div id="adjacent">
+		<p>Hello India</p>
+		<p>Hello Bengaluru</p>
+	</div>
+
+   <div>
+		<p>Hello Chennai</p>
+		<p>Hello Uttarakand</p>
+	</div>
+</body>
+</html>

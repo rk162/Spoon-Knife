@@ -1,0 +1,114 @@
+/*
+ class Selector
+*/
+.table
+{
+    margin: 20px  auto;
+
+    border-collapse: collapse;
+
+    border: 2px solid blue;
+}
+
+/*
+ Element Name Selector
+*/
+
+td,
+th
+{
+    border: 2px solid blue;
+}
+
+.centerText
+{
+    text-align: center;
+}
+
+.redColor
+{
+    color: red;
+}
+
+.logoImage
+{
+    width: 100px;
+    height: 100px;
+
+    border: 2px solid gold;
+}
+
+.inlineElement
+{
+    display: inline;
+}
+
+.links
+{
+    font-size: 1.4em;
+
+    padding: 10px 10px;
+
+    text-decoration: none;
+
+    color: greenyellow;
+}
+
+.panel
+{
+    width: 25%;
+    height: 120px;
+    margin: auto;
+
+    background-color: lightskyblue;
+}
+
+label
+{
+    font-size: 1.4em;
+
+    height: 25px;
+    margin-left: 20px;
+
+    background-color: grey;
+}
+
+.formControl
+{
+    height: 40px;
+    margin-top: 10px;
+}
+
+.inputControl
+{
+    float: right;
+
+    width: 200px;
+    height: 25px;
+
+    color: #fc9;
+}
+.thumbnail
+{
+    float: left;
+
+    width: 60px;
+    margin: 0 15px 15px 0;
+    padding: 5px;
+
+    border: 1px solid #999;
+}
+.logo
+{
+    width: 60px;
+    height: 70px;
+}
+.clearboth
+{
+    clear: both;
+}
+
+p.show
+{
+    margin: 0 auto;
+}

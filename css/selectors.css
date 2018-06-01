@@ -1,0 +1,134 @@
+/* Id Selector */
+#heading
+{
+    text-align: center;
+
+    color: #a0294c;
+}
+
+/* Class Selector */
+.thumbNail
+{
+    width: 100px;
+    height: 100px;
+
+    border: 2px solid #fd8e2f;
+}
+
+.leftLogo
+{
+    float: left;
+}
+
+.rightLogo
+{
+    float: right;
+}
+/* Name Selector */
+nav
+{
+    height: 40px;
+
+    background-color: #abb88e;
+}
+
+table
+{
+    margin: 0 auto 0 auto;
+
+    border-collapse: collapse;
+
+    border: 1px solid #009;
+}
+
+a
+{
+    text-decoration: none;
+}
+/* Grouping Selectors */
+
+td,
+tr
+{
+    border: 1px solid #008;
+}
+/* Attribute Selector */
+
+a[href$='html']
+{
+    font-size: 1.2em;
+
+    opacity: .8;
+}
+a[href$='jsp']
+{
+    font-size: 1.5em;
+
+    opacity: .2;
+}
+/* Descendent Selector */
+
+nav a
+{
+    padding: 0 10px 0 10px;
+}
+/* Sibling Selector */
+#arj ~ p
+{
+    font-family: 'serif';
+    font-weight: bolder;
+
+    color: #300;
+}
+
+/* Adjacent Selector */
+
+#sibling + div
+{
+    font-family: 'Arial';
+
+    color: #fd8e2f;
+}
+/*  Child Selector  */
+ul > li
+{
+    display: inline;
+}
+
+
+
+/* pseduo Classes */
+
+.thumbNail:hover
+{
+    width: 120px;
+
+    border-radius: 5px;
+}
+
+input[type='search']:focus
+{
+    font-size: 1.3em;
+
+    height: 2em;
+
+    border: 2px solid  rgb(0, 0, 136);
+}
+/* Pseduo Element */
+
+p::first-letter
+{
+    font-size: 1.4em;
+}
+
+/* css3 Selectors */
+
+tr:nth-child(2n+1)
+{
+    background-color: magenta;
+}
+
+td:last-child
+{
+    font-weight: bold;
+}
