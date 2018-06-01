@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .one{
+            height: 100px;
+            width: 100px;
+        }
+        .container{
+            display: flex;
+        }
+        #container {
+            margin: 0 45%;
+            padding-top: 30%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="parent">
+       <div class="one"></div>
+       <div class="one"></div>
+    </div>
+    <div id="container" class="form">
+        <label for="no">Enter a no.</label>
+        <input type="text" id="no" class="no">
+        <input type="submit" id="button" class="button" value="Check no">
+        <p class="numchk"></p>
+    </div>
+    <script>
+    var no = document.querySelector('.no');
+    var check= document.querySelector('.numchk');
+    var button = document.querySelector('.button');
+    button.addEventListener('click', getPrime);
+    function getPrime() {
+        var num= Number(no.value);
+        for(let i=2;i<num/2;i++) {
+            if(num%i===0) {
+                check.textContent = `${num} is not prime`;
+                return;
+            }
+        }
+        check.textContent= `${num} is prime`;
+    }
+   
+    var list = Array.from(document.querySelectorAll('div'));
+    let li=function() {
+        list.forEach.call(list, function (item) {
+    console.log(item);
+    });
+    }
+    li();
+    console.log(list.length);
+    (list.splice(2));
+    li();
+     //var child_nodes = parent.childNodes;
+     //console.log(child_nodes.length);
+     //console.log(child_nodes.item(0));
+     //parent.appendChild(document.createElement('div'));
+     //console.log(child_nodes.length);
+     //console.log(child_nodes.item(1));
+    </script>
+</body>
+</html>
