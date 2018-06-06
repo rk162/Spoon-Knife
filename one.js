@@ -242,7 +242,7 @@ let animal={
         }
     },
     sleep() {
-     return this.isSleeping=true;
+      this.isSleeping=true;
     }
 };
 let rabbit={
@@ -251,153 +251,199 @@ let rabbit={
 };
 console.log(rabbit.sleep());
 console.log(rabbit.isSleeping);
-console.log(animal.sleep());
-console.log(animal);
+console.log(animal.isSleeping);
 
-// let hamster = {
-//     stomach: [], //empty string
-//     eat(food) {
-//     this.stomach.push(food);
-//     }
-// };
+let hamster = {
+    stomach: [], //empty string
+    eat(food) {
+    this.stomach.push(food);
+    }
+};
     
-// let speedy = {
-//     stomach: [],
-//     __proto__: hamster
-// };
+let speedy = {
+    stomach: [],
+    __proto__: hamster
+};
     
-// let lazy = {
-//     stomach: [],
-//     __proto__: hamster
-// };
-//     speedy.eat('apple, banana');
-//     console.log(speedy.stomach); //apple
-//     console.log(lazy.stomach);
-//     speedy.eat('apple, banana');
-//     console.log(speedy.stomach); //apple
+let lazy = {
+    stomach: [],
+    __proto__: hamster
+};
+    speedy.eat('apple, banana');
+    console.log(speedy.stomach); //apple
+    console.log(lazy.stomach);
+    speedy.eat('apple, banana');
+    console.log(speedy.stomach); //apple
 
-// let city={
-//     example: 'bangalore',
-//     metro() {
-//         this.isMetro=true;
-//     }
+let city={
+    example: 'bangalore',
+    metro() {
+        this.isMetro=true;
+    }
+}
+function Place(name) {
+    this.name=name;
+}
+Place.prototype= city;
+let area= new Place('Delhi');
+//area.constructor= Place;
+console.log(area.constructor===Place);
+console.log(area.__proto__===city);
+console.log(area.example);
+console.log(area.name);
+console.log(area.metro());
+console.log(area.isMetro);
+console.log(area.constructor===city.constructor);
+console.log(area.__proto__);
+console.log(area.__proto__.__proto__===Object.prototype);
+console.log(area.__proto__.__proto__.__proto__);
+
+let obje= {
+    name: 'one',
+    lname: 'two',
+    fname:function() {
+        return `${this.name} ${this.lname}`
+    }
+}
+console.log(Object.getOwnPropertyNames(obje));
+for(let entry in obje) {
+    console.log(obje[entry]);
+}
+let arr=['one','two',54,true];
+for(let item of arr) {
+    console.log(item);
+    if(item===54)
+    break;
+}
+
+function myAsyncFunction(url) {
+    return new Promise((resolve, reject) => {
+      const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", url, true);
+      xhr.onload = () => resolve(xhr.responseText);
+      xhr.onerror = () => reject(xhr.statusText);
+      xhr.send();
+    });
+  };
+  let count=0;
+  var p = function(resolve,reject){
+      resolve(count++);
+  };
+  var callback = function(){
+    Promise.all([(myAsyncFunction('https://jsonplaceholder.typicode.com/posts/'+count)),new Promise(p)])
+    .then(function(response){
+        let user= (response);
+        let {userId,id,title,body}=user;
+        for(let item in user) {
+            console.log(item+": "+user[item]);
+        }
+    }).catch(function(err){
+             console.log(err);
+    });
+    setTimeout(callback, 1000);
+};
+setTimeout(callback, 1000);
+myAsyncFunction('https://jsonplaceholder.typicode.com/posts/'+count)
+
+// Promise.then(function(response) {
+//       console.log(response);
+// }).catch(function(err){
+//     console.log(err);
+// }).then(function(){
+//     console.log('finally');
+// });
+
+console.log('code running');
+let arr2=[1,2,3,4];
+console.log(arr2.toString());
+
+let animal1={
+    name: 'John',
+    surname: 'Smith',
+    walk() {
+        console.log('can walk');
+    },
+    set fullName(value) {
+        [this.name,this.surname]= value.split(" ");
+    },
+    get fullName() {
+        return `${this.name} ${this.surname}`
+    }
+};
+let animal2={
+    canRun: true,
+     __proto__: animal1
+};
+let animal3={
+    canWalk: false,
+    walk() {
+        console.log('can run');
+    },
+    name: 'Alice',
+    surname: 'Smith',
+    set fullName(value) {
+        [this.name,this.surname]= value.split(" ");
+    },
+    get fullName() {
+        return `${this.name} ${this.surname}`
+    },
+    __proto__:  animal2
+};
+animal3.walk();
+console.log(animal3.canRun);
+console.log(animal3.fullName);
+console.log(animal2.fullName);
+console.log(animal2.fullName);
+animal2.fullName= 'Sir Smith';
+console.log(animal2.fullName);
+console.log(animal1.fullName);
+console.log(animal2);
+
+function funcone(x) {
+    console.log(x);
+}
+function functwo(param,callback) {
+    console.log(`starting ${param} callback`);
+    callback(param);
+    
+};
+functwo(2,funcone);
+function sayHi(phrase, who) {
+    console.log( phrase + ', ' + who );
+  }
+// setTimeout(sayHi, 1000, "Hello", "John");
+// let timerId= setInterval(()=>console.log('tick'),1000);
+// setTimeout(()=>{clearInterval(timerId);console.log('stop')},3000);
+// let i=1;
+// function func(i) {
+//    console.log(i);
 // }
-// function Place(name) {
-//     this.name=name;
+// setTimeout(function run() {
+//    func(Math.pow(++i,2));
+//    setTimeout(run,2000);
+// },1000);
+
+// function printNumbers(from,to) {
+//     let i=from;
+//    var timerId= setInterval(function(){
+//          console.log(i);
+//          if(i==to) {
+//              clearInterval(timerId);
+//          }
+//          i++;
+//     },1000);
 // }
-// Place.prototype= city;
-// let area= new Place('Delhi');
-// //area.constructor= Place;
-// console.log(area.constructor===Place);
-// console.log(area.__proto__===city);
-// console.log(area.example);
-// console.log(area.name);
-// console.log(area.metro());
-// console.log(area.isMetro);
-// console.log(area.constructor===city.constructor);
-// console.log(area.__proto__);
-// console.log(area.__proto__.__proto__===Object.prototype);
-// console.log(area.__proto__.__proto__.__proto__);
-
-// let obje= {
-//     name: 'one',
-//     lname: 'two',
-//     fname:function() {
-//         return `${this.name} ${this.lname}`
-//     }
-// }
-// console.log(Object.getOwnPropertyNames(obje));
-// for(let entry in obje) {
-//     console.log(obje[entry]);
-// }
-// let arr=['one','two',54,true];
-// for(let item of arr) {
-//     console.log(item);
-//     if(item===54)
-//     break;
-// }
-
-// function myAsyncFunction(url) {
-//     return new Promise((resolve, reject) => {
-//       const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-//       const xhr = new XMLHttpRequest();
-//       xhr.open("GET", url, true);
-//       xhr.onload = () => resolve(xhr.responseText);
-//       xhr.onerror = () => reject(xhr.statusText);
-//       xhr.send();
-//     });
-//   };
-//   let count=0;
-//   var p = function(resolve,reject){
-//       resolve(count++);
-//   };
-// //   var callback = function(){
-// //     Promise.all([(myAsyncFunction('https://jsonplaceholder.typicode.com/posts/'+count)),new Promise(p)])
-// //     .then(function(response){
-// //         let user= (response);
-// //         let {userId,id,title,body}=user;
-// //         for(let item in user) {
-// //             console.log(item+": "+user[item]);
-// //         }
-// //     }).catch(function(err){
-// //              console.log(err);
-// //     });
-// //     setTimeout(callback, 1000);
-// // };
-// // setTimeout(callback, 1000);
-// //myAsyncFunction('https://jsonplaceholder.typicode.com/posts/'+count)
-
-// // Promise.then(function(response) {
-// //       console.log(response);
-// // }).catch(function(err){
-// //     console.log(err);
-// // }).then(function(){
-// //     console.log('finally');
-// // });
-
-// console.log('code running');
-// let arr2=[1,2,3,4];
-// console.log(arr2.toString());
-
-// let animal1={
-//     name: 'John',
-//     surname: 'Smith',
-//     walk() {
-//         console.log('can walk');
-//     },
-//     set fullName(value) {
-//         [this.name,this.surname]= value.split(" ");
-//     },
-//     get fullName() {
-//         return `${this.name} ${this.surname}`
-//     }
-// };
-// let animal2={
-//     canRun: true,
-//      __proto__: animal1
-// };
-// let animal3={
-//     canWalk: false,
-//     walk() {
-//         console.log('can run');
-//     },
-//     name: 'Alice',
-//     surname: 'Smith',
-//     set fullName(value) {
-//         [this.name,this.surname]= value.split(" ");
-//     },
-//     get fullName() {
-//         return `${this.name} ${this.surname}`
-//     },
-//     __proto__:  animal2
-// };
-// animal3.walk();
-// console.log(animal3.canRun);
-// console.log(animal3.fullName);
-// console.log(animal2.fullName);
-// console.log(animal2);
-// animal2.fullName= 'Sir Smith';
-// console.log(animal2.fullName);
-// console.log(animal1.fullName);
-// console.log(animal2);
+// printNumbers(30,40);
+function printNumbers(from,to) {
+    let i=from;
+    setTimeout(function print(){
+         console.log(i);
+         if(i<to) {
+            setTimeout(print,1000);
+         }
+         i++;
+    },1000);
+}
+printNumbers(30,40);
 

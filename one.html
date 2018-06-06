@@ -27,7 +27,7 @@
     <div id="container" class="form">
         <label for="no">Enter a no.</label>
         <input type="text" id="no" class="no">
-        <input type="submit" id="button" class="button" value="Check no">
+        <input type='button' id="button" class="button" value="Check no">
         <p class="numchk"></p>
     </div>
     <script>
@@ -45,6 +45,25 @@
         }
         check.textContent= `${num} is prime`;
     }
+    var text= document.createElement('div');
+            text.className='thirddiv';
+            text.height='16px';
+            document.querySelector('.container').appendChild(text);
+            var btn=document.createElement('button');
+            btn.className='btn';
+            btn.textContent='get name';
+            text.appendChild(btn);
+
+    var obj={
+        fname: 'John',
+        lname: 'Doe',
+        fullname() {
+            document.querySelector('.thirddiv').textContent= `${this.fname} ${this.lname}`;
+        }
+    }
+var getname= obj.fullname;
+    btn.addEventListener('click',getname.bind(obj));
+
    
     var list = Array.from(document.querySelectorAll('div'));
     let li=function() {
